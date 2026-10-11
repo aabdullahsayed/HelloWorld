@@ -1,1 +1,1 @@
-# HelloWorld
+# HelloWorld is a simple Minimal Api Build on ASP.NET Core There is a docker file as well 
