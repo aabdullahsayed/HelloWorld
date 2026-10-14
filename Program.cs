@@ -7,7 +7,7 @@ var app = builder.Build();
 
 app.MapGet("/", () => new
 {
-    Message = "Hello World"
+    Message = "Ubuntu 22 LTS Abdullah Al Sayed"
 });
 
 
