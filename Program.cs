@@ -13,7 +13,12 @@ var person = new User(
 
 app.MapGet("/", () => new
 {
-    Message = "Ubuntu 22 LTS Abdullah Al Sayed"
+    Message = "Ubuntu 22 LTS"
+});
+
+app.MapGet("/jin", () => new
+{
+    Message = "I Love you Jaan<3"
 });
 
 app.MapGet("/users", () => person );
