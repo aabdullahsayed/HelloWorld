@@ -21,4 +21,9 @@ public class UserController: ControllerBase
         _context.SaveChanges();
         return Ok(_context.users);
     }
+[HttpGet]
+    public IActionResult Read()
+    {
+        return Ok(_context.users);
+    }
 }
