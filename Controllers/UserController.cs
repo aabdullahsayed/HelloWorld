@@ -14,7 +14,7 @@ public class UserController: ControllerBase
     {
         _context = context;
     }
-    [HttpGet]
+    [HttpPost]
     public IActionResult Create(User user)
     {
         _context.Add(user);
