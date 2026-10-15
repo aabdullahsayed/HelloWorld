@@ -1,7 +1,16 @@
+using HelloWorld.Models;
+using HelloWorld.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+);
+
 
 var app = builder.Build();
 
@@ -18,7 +27,7 @@ app.MapGet("/", () => new
 
 app.MapGet("/jin", () => new
 {
-    Message = "I Love you Jaan<3"
+    Message = "I Love you Jaan<3" 
 });
 
 app.MapGet("/users", () => person );

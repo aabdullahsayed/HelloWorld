@@ -1,14 +1,24 @@
 
 using Microsoft.AspNetCore.Mvc;
+using HelloWorld.Data;
+using HelloWorld.Models;
+namespace HelloWorld.Controllers;
 
 [ApiController]
 [Route("api/users")]
+
 public class UserController: ControllerBase
 {
-    [HttpGet]
-    public IActionResult Check()
+    private readonly AppDbContext _context;
+    public UserController(AppDbContext context)
     {
-        var Message = "This Endpoint is working";
-        return Ok(Message);
+        _context = context;
+    }
+    [HttpGet]
+    public IActionResult Create(User user)
+    {
+        _context.Add(user);
+        _context.SaveChanges();
+        return Ok(_context.users);
     }
 }
